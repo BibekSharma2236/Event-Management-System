@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>All Events</h1>
+    <a href="/add_event">Add New Event</a>
+    <ul>
+        {% for id, event in events.items() %}
+        <li>
+            <strong>{{ event.name }}</strong> - {{ event.date }} at {{ event.venue }}
+            <a href="/register/{{ id }}">Register</a> |
+            <a href="/participants/{{ id }}">View Participants</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
